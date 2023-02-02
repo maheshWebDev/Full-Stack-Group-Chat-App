@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+
+    <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
+  <h5 class="w3-bar-item">Menu</h5>
+  <button class="w3-bar-item w3-button tablink" onclick=display()>Register</button>
+ 
+</div>
+
+
+<div style="margin-left:130px;padding:20px;">
+
+    <div id="register" class="w3-container city" style="display:none">
+  
+          <div class="wrapper">
+          <section class="form signup">
+            <header>Group Chat App</header>
+              <form action="#">
+                <div class="error-txt">This is an error message!</div>
+                  <div class="name-details">
+                    <div class="field input">
+                      <label>Name</label>
+                      <input type="text" placeholder="Enter Name">
+                    </div>
+                  
+                  </div>
+                  <div class="field input">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter Email">
+                  </div>
+                  <div class="field input">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter Password">
+                    <li class="fas fa-eye"></li>
+                  </div>
+                  <div class="field">
+                    <label>Select image</label>
+                    <input type="file">
+                  </div>
+                  <div class="field button">
+                    <input type="submit" name="" value="Sign Up">
+                  </div>
+              </form>
+              <div class="link">
+                Already signed up? <a href="#">Login now</a></div>
+          </section>
+  
+          </div>
+    </div>
+
+    <script>
+        function display(){
+            document.getElementById('register').style.display="block"
+        }
+        </script>
+         </body>
+         </html>
+         
