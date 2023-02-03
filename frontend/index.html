@@ -14,7 +14,7 @@
     <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
   <h5 class="w3-bar-item">Menu</h5>
   <button id="gotoregisterform" class="w3-bar-item w3-button tablink" >Register</button>
- 
+  <button  id="gotologin" class="w3-bar-item w3-button tablink">Login</button>
 </div>
 
 
@@ -52,10 +52,34 @@
                   </div>
               </form>
               <div class="link">
-                Already signed up? <a href="#">Login now</a></div>
+                Already signed up? <a id="login-now" href="#">Login now</a></div>
           </section>
   
           </div>
+    </div>
+    <div id="login" class="w3-container city" style="display:none">
+      <div class="wrapper">
+      <section class="form signup">
+        <header> Group Chat App</header>
+          <form action="#">
+        
+              <div class="field input">
+                <label>Email Address</label>
+                <input id="l-email" type="email" placeholder="Email" required>
+              </div>
+              <div class="field input">
+                <label>Password</label>
+                <input id="l-password" type="password" placeholder="Password" required>
+                <li class="fas fa-eye"></li>
+              </div>
+              <div class="field button">
+                <input type="submit" name="" value="Login">
+              </div>
+          </form>
+          <div class="link">Not yet signed up? <a id="signup-now" href="#">Signup now</a></div>
+      </section>
+  
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
 <script src="./main.js"></script>
