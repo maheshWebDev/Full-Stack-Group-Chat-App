@@ -57,10 +57,11 @@ async function loginUser(e){
         const dataObj = { email,password}
 
         const responce = await axios.post('http://localhost:3000/user/login',dataObj);
-
         console.log(responce)
+
+        alert(responce.data.message)
         
     } catch (error) {
-        
+       alert(error)
     }
 }
