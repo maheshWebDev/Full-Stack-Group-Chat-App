@@ -20,14 +20,25 @@ document.getElementById('signup-now').addEventListener('click',()=>{displayRegis
 
 function displayRegistrationForm(){
     document.getElementById('login').style.display="none";
+    document.getElementById('chat').style.display="none"
     document.getElementById('register').style.display="block"
 }
 
+
 function displayLoginForm(){
     document.getElementById('register').style.display="none"
+    document.getElementById('chat').style.display="none"
     document.getElementById('login').style.display="block";
 }
 
+function displayChatUi(){
+    document.getElementById('register').style.display="none"
+    document.getElementById('login').style.display="none";
+    document.getElementById('chat').style.display="block"
+    document.getElementById('gotologin').style.display="none"
+    document.getElementById('gotoregisterform').style.display="none"
+  
+}
 
 async function registerUser(e){
     e.preventDefault();
@@ -60,6 +71,7 @@ async function loginUser(e){
         console.log(responce)
 
         alert(responce.data.message)
+        displayChatUi();
         
     } catch (error) {
        alert(error)
