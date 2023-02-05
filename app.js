@@ -8,9 +8,13 @@ const cors = require('cors');
 
 const User = require('./model/userModel');
 
+const Message = require('./model/messageModel')
+
 const db  = require('./config/dbConfig')
 
 const userRoute = require('./router/userRoute')
+
+const messageRoute = require('./router/messageRoute')
 
 const app = express();
 
@@ -26,6 +30,11 @@ app.use(express.urlencoded({extended:true}))
 
 app.use('/user',userRoute)
 
+app.use('/user',messageRoute)
+
+// db associations
+User.hasMany(Message);
+Message.belongsTo(User);
 
 // db sync
 db.sync().then((result)=>{

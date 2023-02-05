@@ -10,6 +10,9 @@ login.addEventListener('submit',loginUser)
 const registerForm = document.getElementById('register');
 registerForm.addEventListener('submit',registerUser)
 
+const messageForm = document.getElementById('m-form');
+messageForm.addEventListener('submit', sendMessage)
+
 // login now
 document.getElementById('login-now').addEventListener('click',()=>{displayLoginForm()})
 
@@ -76,4 +79,18 @@ async function loginUser(e){
     } catch (error) {
        alert(error)
     }
+}
+
+ async function sendMessage(e){
+    e.preventDefault();
+    try {
+        const text = document.getElementById('m-input').value;
+        const dataObj = {text}
+        const responce = await axios.post('http://localhost:3000/user/message',dataObj);
+        console.log(responce)
+    } catch (error) {
+        console.log(error)
+    }
+    
+    
 }

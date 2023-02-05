@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
+    <div id="sidebar" class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
   <h5 class="w3-bar-item">Menu</h5>
   <button id="gotoregisterform" class="w3-bar-item w3-button tablink" >Register</button>
   <button  id="gotologin" class="w3-bar-item w3-button tablink">Login</button>
@@ -117,9 +117,9 @@
                 <span class="text">Hi there!</span>
               </div>
             <div class="chat-footer">
-                <form action="#">
-                  <input type="text" placeholder="Type your message...">
-                  <button type="submit">Send</button>
+                <form  id='m-form'>
+                  <input id="m-input" type="text" placeholder="Type your message...">
+                  <button>Send</button>
                 </form>
               </div>
     </div>
