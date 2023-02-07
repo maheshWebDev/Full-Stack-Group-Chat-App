@@ -10,8 +10,6 @@ login.addEventListener('submit',loginUser)
 const registerForm = document.getElementById('register');
 registerForm.addEventListener('submit',registerUser)
 
-const messageForm = document.getElementById('m-form');
-messageForm.addEventListener('submit', sendMessage)
 
 // login now
 document.getElementById('login-now').addEventListener('click',()=>{displayLoginForm()})
@@ -23,25 +21,18 @@ document.getElementById('signup-now').addEventListener('click',()=>{displayRegis
 
 function displayRegistrationForm(){
     document.getElementById('login').style.display="none";
-    document.getElementById('chat').style.display="none"
+  
     document.getElementById('register').style.display="block"
 }
 
 
 function displayLoginForm(){
     document.getElementById('register').style.display="none"
-    document.getElementById('chat').style.display="none"
+    
     document.getElementById('login').style.display="block";
 }
 
-function displayChatUi(){
-    document.getElementById('register').style.display="none"
-    document.getElementById('login').style.display="none";
-    document.getElementById('chat').style.display="block"
-    document.getElementById('gotologin').style.display="none"
-    document.getElementById('gotoregisterform').style.display="none"
-  
-}
+
 
 async function registerUser(e){
     e.preventDefault();
@@ -74,23 +65,9 @@ async function loginUser(e){
         console.log(responce)
 
         alert(responce.data.message)
-        displayChatUi();
+        window.location.href='chatUi.html' 
         
     } catch (error) {
        alert(error)
     }
-}
-
- async function sendMessage(e){
-    e.preventDefault();
-    try {
-        const text = document.getElementById('m-input').value;
-        const dataObj = {text}
-        const responce = await axios.post('http://localhost:3000/user/message',dataObj);
-        console.log(responce)
-    } catch (error) {
-        console.log(error)
-    }
-    
-    
 }
