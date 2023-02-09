@@ -1,10 +1,8 @@
-
-
-
 const messageForm = document.getElementById('chat-form');
 messageForm.addEventListener('submit', sendMessage)
 
 window.addEventListener('DOMContentLoaded',fetchChat)
+
 
 
 async function sendMessage(e){
@@ -16,6 +14,7 @@ async function sendMessage(e){
         // console.log("working")
         const responce = await axios.post('http://localhost:3000/user/message',dataObj);
              console.log(responce)
+             setInterval(()=>{fetchChat()},1000)
     } catch (error) {
         console.log(error)
     }
@@ -25,9 +24,18 @@ async function sendMessage(e){
 
 async function fetchChat(){
     try {
-        const responce = await axios.get('http://localhost:3000/user/message')
-        console.log(responce)
-        showChat(responce.data.data)
+
+       const oldMsg =  localStorage.getItem('arr')
+       let lastMsg = JSON.parse(oldMsg).length
+
+    const newMsg  = await axios.get(`http://localhost:3000/user/message/${lastMsg}`)
+  
+    const mergedArray = [...JSON.parse(oldMsg),...newMsg.data.data]
+   
+    localStorage.setItem('arr',JSON.stringify(mergedArray))
+
+    showChat(JSON.parse(oldMsg))
+
     }
      catch (error) {
         console.log(error)
@@ -37,6 +45,7 @@ async function fetchChat(){
 
 function showChat(arr){
 const parent = document.getElementById('message-container');
+parent.innerHTML = ' '
 arr.forEach(ele => {
     const child =`<div class="message">
 <span class="sender">${ele.id}:</span>
@@ -47,3 +56,4 @@ parent.innerHTML +=child;
 
 
 }
+
