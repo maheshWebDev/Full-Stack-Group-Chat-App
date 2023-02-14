@@ -1,0 +1,126 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .sidebar-header {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .group-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .group-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .group-item:hover {
+    background-color: #ccc;
+  }
+  
+  .message-area {
+    width: 80%;
+    padding: 20px;
+    height: 100%;
+    background-color: #fff;
+  }
+  
+  .message-header {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .message-list {
+    height: 60%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+  }
+  
+  .message-item {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .user-message {
+    background-color: #ccc;
+    text-align: right;
+    color: #fff;
+  }
+  
+  .other-message {
+    background-color: #ddd;
+  }
+  
+  .message-text {
+    padding: 10px;
+  }
+  
+  .message-input-area {
+    display: flex;
+    justify-content: space-between;
+   
+  }
+  
+  .message-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-right: 10px;
+  }
+  
+  
+  /* create group */
+  .group-creation {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  form {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+
+  

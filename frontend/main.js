@@ -47,7 +47,9 @@ async function registerUser(e){
     //  console.log(responce)
      alert(responce.data.message)
     } catch (error) {
-        alert(error)
+    
+        alert(error.response.data.message)
+        
     }
  
 }

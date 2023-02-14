@@ -15,7 +15,7 @@ module.exports.registerUser = async(req,res)=>{
 
         const isAlreadyExist =await User.findOne({where:{email:email}})
     
-        if(isAlreadyExist) return res.status(201).json({"message":"User already exists"})
+        if(isAlreadyExist) return res.status(409).json({"message":"User already exists"})
 
        const roundSalt = 10
        const hashPassword = await bcrypt.hash(password,roundSalt)

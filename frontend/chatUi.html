@@ -5,25 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  
+    <link rel="stylesheet" href="chatUi.css">
 </head>
 <body>
- 
-        <div class="chat-container">
-          <div class="chat-header">
-              <h1>Group Chat App</h1>
-          </div>
-          <div id="message-container">
+    <div id="container" class="container" >
+        <div class="sidebar">
+          <button id="create-group">Create Group</button>
+          <h2 class="sidebar-header">Groups</h2>
+          <ul class="group-list">
+            <li class="group-item">Group 1</li>
+            <div class="background">
+              
+                <button class="clipboard">Click me to copy current Url</button>
+                <p>Have you already clicked?</p>
              
+              </div>
+            <li class="group-item">Group 2</li>
+         
+          </ul>
+        </div>
+        <div class="message-area">
+          <h2 class="message-header">active group</h2>
+          <div id='message-list' class="message-list">
+            <div class="message-item other-message">
+              <span class="sender">mahesh</span>
+              <p class="message-text">Hi there!</p>
+            </div>
+            <div class="message-item other-message">
+              <span class="sender">mahesh</span>
+              <p class="message-text">Hi there!</p>
+            </div>
+          </div>
+          <div class="message-input-area">
+            <form id="chat-form">
+              <input type="text" id="chat-input" class="message-input" placeholder="Enter your message here...">
+              <button class="send-button">Send</button>
+            </form>
+           
+          </div>
+        </div>
       </div>
-      <div class="form-container">
-        <form id="chat-form">
-          <input id="chat-input" type="text">
-          <input type="submit" name="" value="send">
+      <div class="group-creation" id="group-div" style="display: none;">
+        <h2>Create a Group</h2>
+        <form id="create-group">
+          <label for="group-name">Group Name:</label>
+          <input type="text" id="group-name" name="group-name" required>
+          <br>
+          <!-- <label for="group-description">Group Description:</label>
+          <textarea id="group-description" name="group-description"></textarea> -->
+          <!-- <br> -->
+          
+          
+          <input type="submit" value="Create Group">
         </form>
       </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
-   <script src="chatUi.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+      <script src="chatUi.js"></script>
 </body>
 </html>

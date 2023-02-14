@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded',fetchChat)
 
 
 async function sendMessage(e){
-    e.preventDefault();
+    // e.preventDefault();
     try {
         const text = document.getElementById('chat-input').value;
         const dataObj = {text}
@@ -24,9 +24,16 @@ async function sendMessage(e){
 
 async function fetchChat(){
     try {
-
+        // localStorage.setItem('arr',JSON.stringify([]))
        const oldMsg =  localStorage.getItem('arr')
+
        let lastMsg = JSON.parse(oldMsg).length
+
+       let parsedarr = JSON.parse(oldMsg);
+    //    console.log(lastMsg)
+   
+    console.log(parsedarr)
+    showChat(parsedarr)
 
     const newMsg  = await axios.get(`http://localhost:3000/user/message/${lastMsg}`)
   
@@ -34,7 +41,7 @@ async function fetchChat(){
    
     localStorage.setItem('arr',JSON.stringify(mergedArray))
 
-    showChat(JSON.parse(oldMsg))
+   
 
     }
      catch (error) {
@@ -44,16 +51,29 @@ async function fetchChat(){
 
 
 function showChat(arr){
-const parent = document.getElementById('message-container');
+const parent = document.getElementById('message-list');
 parent.innerHTML = ' '
-arr.forEach(ele => {
-    const child =`<div class="message">
-<span class="sender">${ele.id}:</span>
-<span class="text">${ele.message_text}</span>
-</div>`;
+console.log(parent)
+arr.forEach((obj)=> {
+    const child =`<div class="message-item other-message">
+    <span class="sender">${obj.id}</span>
+    <p class="message-text">${obj.message_text}</p>
+  </div>`
 parent.innerHTML +=child;
 });
 
 
 }
 
+
+// create-group
+document.getElementById('create-group').addEventListener("click",(e)=>{
+    e.preventDefault();
+    document.getElementById('container').style.display = "none"
+ document.getElementById('group-div').style.display= "block"
+    
+})
+
+async function createGroup(){
+    
+}
